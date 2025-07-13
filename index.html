@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abdoulie A.J. - Cloud & Security Engineer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Abdoulie A.J. - Cloud Engineer and Mathematical Engineering Student specializing in Azure solutions and advanced mathematics.">
+  <style>body { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-gradient-to-br from-[#181c2f] via-[#232946] to-[#3b82f6] min-h-screen text-gray-100">
+  <!-- Navbar -->
+  <nav class="fixed w-full z-50 bg-black/60 backdrop-blur shadow-sm">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+      <div class="text-2xl font-bold text-blue-400">AAJ</div>
+      <ul class="hidden md:flex gap-8 font-medium">
+        <li><a href="#about" class="hover:text-blue-400 transition">About</a></li>
+        <li><a href="#skills" class="hover:text-blue-400 transition">Skills</a></li>
+        <li><a href="#projects" class="hover:text-blue-400 transition">Projects</a></li>
+        <li><a href="#contact" class="hover:text-blue-400 transition">Contact</a></li>
+      </ul>
+      <button class="md:hidden text-2xl text-blue-400" id="menu-btn"><i class="fas fa-bars"></i></button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-black/90 px-6 py-4">
+      <ul class="flex flex-col gap-4 text-lg">
+        <li><a href="#about" class="hover:text-blue-400 transition">About</a></li>
+        <li><a href="#skills" class="hover:text-blue-400 transition">Skills</a></li>
+        <li><a href="#projects" class="hover:text-blue-400 transition">Projects</a></li>
+        <li><a href="#contact" class="hover:text-blue-400 transition">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="relative flex flex-col items-center justify-center min-h-screen pt-32 pb-16 text-center overflow-hidden bg-gradient-to-br from-[#232946] via-[#181c2f] to-[#3b82f6]">
+    <div class="absolute inset-0 -z-10 animate-gradient bg-gradient-to-tr from-blue-900 via-indigo-900 to-black opacity-80"></div>
+    <svg class="absolute top-0 left-0 w-96 h-96 opacity-20 -z-10 animated-svg" viewBox="0 0 200 200"><circle cx="100" cy="100" r="100" fill="#6366f1"/></svg>
+    <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-2 drop-shadow-lg">Abdoulie A.J.</h1>
+    <h2 class="text-2xl md:text-3xl font-bold text-blue-400 mb-4 min-h-[2.5rem] drop-shadow">
+      <span id="typewriter"></span>
+    </h2>
+    <p class="text-xl text-gray-200 mb-6">Bridging cloud technology with mathematical precision</p>
+    <div class="flex flex-wrap items-center justify-center gap-4 mb-4">
+      <a href="mailto:adi13218005155@outlook.com" class="text-blue-300 hover:underline flex items-center gap-2"><i class="fas fa-envelope"></i>adi13218005155@outlook.com</a>
+      <span class="text-gray-400">|</span>
+      <span class="flex items-center gap-2"><i class="fas fa-map-marker-alt"></i>Rome, Italy</span>
+      <span class="text-gray-400">|</span>
+      <span class="flex items-center gap-2"><i class="fas fa-phone"></i>+39 339 115 4233</span>
+    </div>
+    <div class="flex gap-4 justify-center">
+      <a href="https://www.linkedin.com/in/abdoulie-a-j-339ba4226" target="_blank" aria-label="LinkedIn" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl shadow-lg transition"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <svg class="absolute bottom-0 right-0 w-96 h-96 opacity-20 -z-10 animated-svg" viewBox="0 0 200 200"><circle cx="100" cy="100" r="100" fill="#2563eb"/></svg>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4">
+    <!-- About Section -->
+    <section id="about" class="my-24 opacity-0 translate-y-8 transition-all duration-700 ease-out will-change-transform flex flex-col md:flex-row gap-8 items-center justify-center">
+      <div class="bg-black/70 rounded-2xl shadow-2xl p-8 flex-1 min-w-[300px] max-w-xl">
+        <h2 class="text-3xl font-bold text-blue-400 mb-4 flex items-center gap-2"><i class="fas fa-user-circle animate-bounce"></i> About Me</h2>
+        <p class="text-lg text-gray-200">Cloud & Security Engineer with over 5 years of experience in Azure AD, Office 365 migrations, and enterprise identity/security frameworks. Led migrations impacting 50+ tenant organizations, slashed provisioning time by 35%, and managed Office 365 environments with zero data loss. Currently completing an MSc in Mathematical Engineering (Scientific Computing), bridging advanced research and pragmatic IT solutions.</p>
+        <div class="mt-4 space-y-2">
+          <p class="text-blue-400 font-semibold">Email: <span class="text-white font-normal">adi13218005155@outlook.com</span></p>
+          <p class="text-blue-400 font-semibold">Location: <span class="text-white font-normal">Rome, Italy</span></p>
+          <p class="text-blue-400 font-semibold">Education: <span class="text-white font-normal">MSc in Mathematical Engineering (Scientific Computing)</span></p>
+        </div>
+      </div>
+      <div class="bg-gradient-to-br from-[#232946] to-[#181c2f] rounded-2xl shadow-2xl p-8 flex-1 min-w-[300px] max-w-md flex flex-col items-center border-4 border-blue-600/80">
+        <img src="profile.pic.jpg" alt="Profile Picture" class="w-32 h-32 mb-4 rounded-full border-4 border-blue-500 shadow-xl object-cover" />
+        <h3 class="text-2xl font-bold text-white mb-1">Abdoulie A.J.</h3>
+        <p class="text-blue-400 mb-4">Cloud Engineer & Security Specialist</p>
+        <div class="flex gap-6 mt-2">
+          <a href="https://www.linkedin.com/in/abdoulie-a-j-339ba4226" target="_blank" aria-label="LinkedIn" class="text-blue-400 hover:text-blue-300 text-3xl transition"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="my-24 opacity-0 translate-y-8 transition-all duration-700 ease-out will-change-transform">
+      <div class="bg-black/70 rounded-2xl shadow-2xl p-8">
+        <h2 class="text-3xl font-bold text-blue-400 mb-4 flex items-center gap-2"><i class="fas fa-cogs animate-spin"></i> Skills</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="text-lg font-semibold text-blue-300 mb-2">Technical Skills</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-1 rounded-full shadow">Azure AD/Entra ID</span>
+              <span class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-1 rounded-full shadow">PowerShell/Bicep/Terraform</span>
+              <span class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-1 rounded-full shadow">Microsoft 365</span>
+              <span class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-1 rounded-full shadow">Linux</span>
+              <span class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-1 rounded-full shadow">Python & MATLAB</span>
+              <span class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-1 rounded-full shadow">Bash scripting</span>
+              <span class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-1 rounded-full shadow">CI/CD principles/DevOps</span>
+              <span class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-1 rounded-full shadow">Git</span>
+              <span class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-1 rounded-full shadow">Role-based access control</span>
+              <span class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-1 rounded-full shadow">OAuth</span>
+              <span class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-1 rounded-full shadow">AIP policies</span>
+              <span class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-1 rounded-full shadow">Azure ML</span>
+              <span class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-1 rounded-full shadow">Pandas</span>
+              <span class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-1 rounded-full shadow">Matplotlib</span>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-blue-300 mb-2">Soft Skills</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-gradient-to-r from-indigo-500 to-blue-500 text-white px-4 py-1 rounded-full shadow">Communication & Collaboration</span>
+              <span class="bg-gradient-to-r from-indigo-500 to-blue-500 text-white px-4 py-1 rounded-full shadow">Problem Solving</span>
+              <span class="bg-gradient-to-r from-indigo-500 to-blue-500 text-white px-4 py-1 rounded-full shadow">Adaptability</span>
+              <span class="bg-gradient-to-r from-indigo-500 to-blue-500 text-white px-4 py-1 rounded-full shadow">Time Management</span>
+              <span class="bg-gradient-to-r from-indigo-500 to-blue-500 text-white px-4 py-1 rounded-full shadow">Teamwork</span>
+              <span class="bg-gradient-to-r from-indigo-500 to-blue-500 text-white px-4 py-1 rounded-full shadow">Leadership</span>
+              <span class="bg-gradient-to-r from-indigo-500 to-blue-500 text-white px-4 py-1 rounded-full shadow">Creativity & Innovation</span>
+              <span class="bg-gradient-to-r from-indigo-500 to-blue-500 text-white px-4 py-1 rounded-full shadow">Customer Support</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="my-24 opacity-0 translate-y-8 transition-all duration-700 ease-out will-change-transform">
+      <div class="bg-black/70 rounded-2xl shadow-2xl p-8">
+        <h2 class="text-3xl font-bold text-blue-400 mb-4 flex items-center gap-2"><i class="fas fa-project-diagram animate-bounce"></i> Projects</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Project 2: Phishing Website Classification -->
+          <div class="bg-gradient-to-br from-blue-900 to-indigo-900 rounded-xl shadow-lg p-6 flex flex-col items-start border-2 border-blue-600/80 transition-transform hover:scale-105 duration-300">
+            <div class="w-full flex items-center gap-2 mb-2">
+              <i class="fas fa-shield-alt text-blue-400 text-2xl"></i>
+              <h3 class="text-xl font-bold text-white">Phishing Website Classification</h3>
+            </div>
+            <p class="text-gray-200 mb-2">A machine learning model to detect phishing websites using features from the UCI dataset. Includes data preprocessing, feature selection, and model evaluation.</p>
+            <div class="flex flex-wrap gap-2 mb-2">
+              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Python</span>
+              <span class="bg-indigo-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Scikit-learn</span>
+              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Pandas</span>
+              <span class="bg-indigo-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Jupyter</span>
+            </div>
+            <span class="text-xs text-gray-400 mb-2">01/05/2024 – 15/06/2024</span>
+            <a href="https://github.com/adibamba/phishing-classification" target="_blank" class="mt-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-indigo-600 hover:to-blue-600 text-white px-4 py-2 rounded-full font-semibold flex items-center gap-2 shadow transition"><span>View Project</span> <i class="fas fa-external-link-alt"></i></a>
+          </div>
+
+          <!-- Project 3: Azure Virtual Machine Deployment using Bicep -->
+          <div class="bg-gradient-to-br from-blue-900 to-indigo-900 rounded-xl shadow-lg p-6 flex flex-col items-start border-2 border-blue-600/80 transition-transform hover:scale-105 duration-300">
+            <div class="w-full flex items-center gap-2 mb-2">
+              <i class="fas fa-server text-blue-400 text-2xl"></i>
+              <h3 class="text-xl font-bold text-white">Azure Virtual Machine Deployment using Bicep</h3>
+            </div>
+            <p class="text-gray-200 mb-2">Automated deployment of a Windows VM in Azure using Bicep Infrastructure as Code templates.</p>
+            <div class="flex flex-wrap gap-2 mb-2">
+              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Azure</span>
+              <span class="bg-indigo-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Bicep</span>
+              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">PowerShell</span>
+            </div>
+            <span class="text-xs text-gray-400 mb-2">20/03/2024 – 28/03/2024</span>
+            <a href="https://github.com/adibamba/-Azure-Virtual-Machine-Deployment-using-Bicep" target="_blank" class="mt-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-indigo-600 hover:to-blue-600 text-white px-4 py-2 rounded-full font-semibold flex items-center gap-2 shadow transition"><span>View Project</span> <i class="fas fa-external-link-alt"></i></a>
+          </div>
+
+          <!-- Project 4: Exchange Online Technical Support Report -->
+          <div class="bg-gradient-to-br from-blue-900 to-indigo-900 rounded-xl shadow-lg p-6 flex flex-col items-start border-2 border-blue-600/80 transition-transform hover:scale-105 duration-300">
+            <div class="w-full flex items-center gap-2 mb-2">
+              <i class="fas fa-file-alt text-blue-400 text-2xl"></i>
+              <h3 class="text-xl font-bold text-white">Exchange Online Technical Support Report</h3>
+            </div>
+            <p class="text-gray-200 mb-2">A PowerShell script to generate diagnostic reports and automate common support tasks for Exchange Online environments.</p>
+            <div class="flex flex-wrap gap-2 mb-2">
+              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">PowerShell</span>
+              <span class="bg-indigo-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Microsoft 365</span>
+            </div>
+            <span class="text-xs text-gray-400 mb-2">10/01/2024 – 20/01/2024</span>
+            <a href="https://github.com/adibamba/ExchangeOnline-technical-support-report" target="_blank" class="mt-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-indigo-600 hover:to-blue-600 text-white px-4 py-2 rounded-full font-semibold flex items-center gap-2 shadow transition"><span>View Project</span> <i class="fas fa-external-link-alt"></i></a>
+          </div>
+
+          <!-- Project 5: 2D Ising Monte Carlo Simulation -->
+          <div class="bg-gradient-to-br from-blue-900 to-indigo-900 rounded-xl shadow-lg p-6 flex flex-col items-start border-2 border-blue-600/80 transition-transform hover:scale-105 duration-300">
+            <div class="w-full flex items-center gap-2 mb-2">
+              <i class="fas fa-chart-area text-blue-400 text-2xl"></i>
+              <h3 class="text-xl font-bold text-white">2D Ising Monte Carlo Simulation</h3>
+            </div>
+            <p class="text-gray-200 mb-2">Simulates the 2D Ising model using Monte Carlo methods to visualize phase transitions in statistical physics.</p>
+            <div class="flex flex-wrap gap-2 mb-2">
+              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Python</span>
+              <span class="bg-indigo-700 text-white px-3 py-1 rounded-full text-xs font-semibold">NumPy</span>
+              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Matplotlib</span>
+            </div>
+            <span class="text-xs text-gray-400 mb-2">01/07/2023 – 15/07/2023</span>
+            <a href="https://github.com/adibamba/2d-ising-monte-carlo" target="_blank" class="mt-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-indigo-600 hover:to-blue-600 text-white px-4 py-2 rounded-full font-semibold flex items-center gap-2 shadow transition"><span>View Project</span> <i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="my-24 opacity-0 translate-y-8 transition-all duration-700 ease-out will-change-transform">
+      <div class="bg-black/70 rounded-2xl shadow-2xl p-8">
+        <h2 class="text-3xl font-bold text-blue-400 mb-4 flex items-center gap-2"><i class="fas fa-paper-plane animate-bounce"></i> Get in Touch</h2>
+        <div class="flex flex-col items-center gap-2">
+          <p class="flex items-center gap-2 text-lg"><i class="fas fa-envelope"></i> <a href="mailto:adi13218005155@outlook.com" class="text-blue-400 hover:underline">adi13218005155@outlook.com</a></p>
+          <p class="flex items-center gap-2 text-lg"><i class="fas fa-map-marker-alt"></i> Rome, Italy</p>
+          <p class="flex items-center gap-2 text-lg"><i class="fas fa-phone"></i> +39 339 115 4233</p>
+          <div class="flex gap-4 mt-2">
+            <a href="https://www.linkedin.com/in/abdoulie-a-j-339ba4226" target="_blank" aria-label="LinkedIn" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl shadow-lg transition"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-center py-8 text-gray-400 text-sm mt-12">
+    &copy; 2024 Abdoulie A.J. All rights reserved.
+  </footer>
+
+  <!-- TypewriterJS for dynamic typing effect -->
+  <script src="https://unpkg.com/typewriter-effect@2.18.0/dist/core.js"></script>
+  <script>
+    // Hamburger menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    // Typewriter effect
+    const typewriter = new Typewriter('#typewriter', {
+      loop: true,
+      delay: 60,
+      deleteSpeed: 30
+    });
+    typewriter
+      .typeString('Cloud Engineer | Microsoft365/Azure Specialist')
+      .pauseFor(1800)
+      .deleteAll()
+      .typeString('Microsoft-Certified Cloud & Security Engineer')
+      .pauseFor(1800)
+      .deleteAll()
+      .typeString('Mathematical Engineering Student')
+      .pauseFor(1800)
+      .deleteAll()
+      .start();
+    // Fade-in on scroll
+    const fadeSections = document.querySelectorAll('section, header');
+    const fadeIn = (el) => {
+      el.classList.remove('opacity-0', 'translate-y-8');
+      el.classList.add('opacity-100', 'translate-y-0');
+    };
+    const observerFade = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          fadeIn(entry.target);
+          observerFade.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    fadeSections.forEach(section => {
+      observerFade.observe(section);
+    });
+    // Animate icons (e.g., floating effect)
+    document.querySelectorAll('.animated-svg, .fa-linkedin').forEach(icon => {
+      icon.classList.add('animated-svg');
+    });
+  </script>
+</body>
+</html> 
