@@ -17,7 +17,67 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <meta name="description" content="Abdoulie A.J. - Cloud Engineer and Mathematical Engineering Student specializing in Azure solutions and advanced mathematics.">
-  <style>body { font-family: 'Inter', sans-serif; }</style>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(4px);
+    }
+    
+    .modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .modal-content {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      margin: auto;
+      padding: 0;
+      border: 2px solid #3b82f6;
+      border-radius: 1rem;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+      animation: modalSlideIn 0.3s ease-out;
+    }
+    
+    @keyframes modalSlideIn {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    
+    /* Filter button active state */
+    .filter-btn.active {
+      background: linear-gradient(to right, #2563eb, #4f46e5);
+      transform: scale(1.05);
+    }
+    
+    /* Smooth transitions */
+    .project-card {
+      transition: all 0.3s ease;
+    }
+    
+    .project-card.hidden {
+      display: none;
+    }
+  </style>
 </head>
 <body class="bg-gradient-to-br from-[#181c2f] via-[#232946] to-[#3b82f6] min-h-screen text-gray-100">
   <!-- Navbar -->
@@ -51,12 +111,24 @@
       <span id="typewriter"></span>
     </h2>
     <p class="text-xl text-gray-200 mb-6">Bridging cloud technology with mathematical precision</p>
-    <div class="flex flex-wrap items-center justify-center gap-4 mb-4">
+    <div class="flex flex-wrap items-center justify-center gap-4 mb-6">
       <a href="mailto:adi13218005155@outlook.com" class="text-blue-300 hover:underline flex items-center gap-2"><i class="fas fa-envelope"></i>adi13218005155@outlook.com</a>
       <span class="text-gray-400">|</span>
       <span class="flex items-center gap-2"><i class="fas fa-map-marker-alt"></i>Rome, Italy</span>
       <span class="text-gray-400">|</span>
       <span class="flex items-center gap-2"><i class="fas fa-phone"></i>+39 339 115 4233</span>
+    </div>
+    <!-- CTA Buttons -->
+    <div class="flex flex-wrap gap-4 justify-center mb-6">
+      <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition-all hover:scale-105 flex items-center gap-2">
+        <i class="fas fa-envelope"></i> Get in touch
+      </a>
+      <a href="#projects" class="bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition-all hover:scale-105 flex items-center gap-2">
+        <i class="fas fa-folder-open"></i> See projects
+      </a>
+      <a href="https://github.com/adibamba" target="_blank" class="bg-gray-800 hover:bg-gray-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition-all hover:scale-105 flex items-center gap-2">
+        <i class="fab fa-github"></i> GitHub
+      </a>
     </div>
     <div class="flex gap-4 justify-center">
       <a href="https://www.linkedin.com/in/abdoulie-a-j-339ba4226" target="_blank" aria-label="LinkedIn" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-12 h-12 flex items-center justify-center"><i class="fab fa-linkedin"></i></a>
@@ -130,136 +202,27 @@
     <!-- Projects Section -->
     <section id="projects" class="my-24 opacity-0 translate-y-8 transition-all duration-700 ease-out will-change-transform">
       <div class="bg-black/70 rounded-2xl shadow-2xl p-8">
-        <h2 class="text-3xl font-bold text-blue-400 mb-4 flex items-center gap-2"><i class="fas fa-project-diagram animate-bounce"></i> Projects</h2>
-        <div class="grid md:grid-cols-2 gap-8">
-          <!-- Project 1: Phishing Website Classification -->
-          <div class="bg-gradient-to-br from-blue-900 to-indigo-900 rounded-xl shadow-lg p-6 flex flex-col items-start border-2 border-blue-600/80 transition-transform hover:scale-105 duration-300">
-            <div class="w-full flex items-center gap-2 mb-2">
-              <i class="fas fa-shield-alt text-blue-400 text-2xl"></i>
-              <h3 class="text-xl font-bold text-white">Phishing Website Classification</h3>
-            </div>
-            <p class="text-gray-200 mb-2">A machine learning model to detect phishing websites using features from the UCI dataset. Includes data preprocessing, feature selection, and model evaluation.</p>
-            <div class="flex flex-wrap gap-2 mb-2">
-              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Python</span>
-              <span class="bg-indigo-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Scikit-learn</span>
-              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Pandas</span>
-              <span class="bg-indigo-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Jupyter</span>
-            </div>
-            <span class="text-xs text-gray-400 mb-2">01/05/2024 – 15/06/2024</span>
-            <a href="https://github.com/adibamba/phishing-classification" target="_blank" class="mt-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-indigo-600 hover:to-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">View on GitHub</a>
-          </div>
-
-          <!-- Project 2: Azure Virtual Machine Deployment using Bicep -->
-          <div class="bg-gradient-to-br from-blue-900 to-indigo-900 rounded-xl shadow-lg p-6 flex flex-col items-start border-2 border-blue-600/80 transition-transform hover:scale-105 duration-300">
-            <div class="w-full flex items-center gap-2 mb-2">
-              <i class="fas fa-server text-blue-400 text-2xl"></i>
-              <h3 class="text-xl font-bold text-white">Azure Virtual Machine Deployment using Bicep</h3>
-            </div>
-            <p class="text-gray-200 mb-2">Automated deployment of a Windows VM in Azure using Bicep Infrastructure as Code templates.</p>
-            <div class="flex flex-wrap gap-2 mb-2">
-              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Azure</span>
-              <span class="bg-indigo-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Bicep</span>
-              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">PowerShell</span>
-            </div>
-            <span class="text-xs text-gray-400 mb-2">20/03/2024 – 28/03/2024</span>
-            <a href="https://github.com/adibamba/-Azure-Virtual-Machine-Deployment-using-Bicep" target="_blank" class="mt-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-indigo-600 hover:to-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">View on GitHub</a>
-          </div>
-
-          <!-- Project 3: Exchange Online Technical Support Report -->
-          <div class="bg-gradient-to-br from-blue-900 to-indigo-900 rounded-xl shadow-lg p-6 flex flex-col items-start border-2 border-blue-600/80 transition-transform hover:scale-105 duration-300">
-            <div class="w-full flex items-center gap-2 mb-2">
-              <i class="fas fa-file-alt text-blue-400 text-2xl"></i>
-              <h3 class="text-xl font-bold text-white">Exchange Online Technical Support Report</h3>
-            </div>
-            <p class="text-gray-200 mb-2">A PowerShell script to generate diagnostic reports and automate common support tasks for Exchange Online environments.</p>
-            <div class="flex flex-wrap gap-2 mb-2">
-              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">PowerShell</span>
-              <span class="bg-indigo-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Microsoft 365</span>
-            </div>
-            <span class="text-xs text-gray-400 mb-2">10/01/2024 – 20/01/2024</span>
-            <a href="https://github.com/adibamba/ExchangeOnline-technical-support-report" target="_blank" class="mt-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-indigo-600 hover:to-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">View on GitHub</a>
-          </div>
-
-          <!-- Project 4: 2D Ising Monte Carlo Simulation -->
-          <div class="bg-gradient-to-br from-blue-900 to-indigo-900 rounded-xl shadow-lg p-6 flex flex-col items-start border-2 border-blue-600/80 transition-transform hover:scale-105 duration-300">
-            <div class="w-full flex items-center gap-2 mb-2">
-              <i class="fas fa-chart-area text-blue-400 text-2xl"></i>
-              <h3 class="text-xl font-bold text-white">2D Ising Monte Carlo Simulation</h3>
-            </div>
-            <p class="text-gray-200 mb-2">Simulates the 2D Ising model using Monte Carlo methods to visualize phase transitions in statistical physics.</p>
-            <div class="flex flex-wrap gap-2 mb-2">
-              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Python</span>
-              <span class="bg-indigo-700 text-white px-3 py-1 rounded-full text-xs font-semibold">NumPy</span>
-              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Matplotlib</span>
-            </div>
-            <span class="text-xs text-gray-400 mb-2">01/07/2023 – 15/07/2023</span>
-            <a href="https://github.com/adibamba/2d-ising-monte-carlo" target="_blank" class="mt-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-indigo-600 hover:to-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">View on GitHub</a>
-          </div>
-
-          <!-- New Project: Avionics Cybersecurity Simulation -->
-          <div class="bg-gradient-to-br from-blue-900 to-indigo-900 rounded-xl shadow-lg p-6 flex flex-col items-start border-2 border-blue-600/80 transition-transform hover:scale-105 duration-300">
-            <div class="w-full flex items-center gap-2 mb-2">
-              <i class="fas fa-plane text-blue-400 text-2xl"></i>
-              <h3 class="text-xl font-bold text-white">Avionics Cybersecurity Simulation</h3>
-            </div>
-            <p class="text-gray-200 mb-2">A simulation environment for avionics systems focusing on cybersecurity: threat scenarios, intrusion detection experiments, and resilience testing.</p>
-            <div class="flex flex-wrap gap-2 mb-2">
-              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Python</span>
-              <span class="bg-indigo-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Simulation</span>
-              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Cybersecurity</span>
-            </div>
-            <span class="text-xs text-gray-400 mb-2">06/2024 – Present</span>
-            <a href="https://github.com/adibamba/avionics-cybersecurity-simulation" target="_blank" class="mt-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-indigo-600 hover:to-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">View on GitHub</a>
-          </div>
-
-          <!-- New Project: Flight Path Optimization -->
-          <div class="bg-gradient-to-br from-blue-900 to-indigo-900 rounded-xl shadow-lg p-6 flex flex-col items-start border-2 border-blue-600/80 transition-transform hover:scale-105 duration-300">
-            <div class="w-full flex items-center gap-2 mb-2">
-              <i class="fas fa-route text-blue-400 text-2xl"></i>
-              <h3 class="text-xl font-bold text-white">Flight Path Optimization</h3>
-            </div>
-            <p class="text-gray-200 mb-2">Optimization algorithms for flight paths to reduce fuel consumption and emissions using numerical methods and heuristic optimization.</p>
-            <div class="flex flex-wrap gap-2 mb-2">
-              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Python</span>
-              <span class="bg-indigo-700 text-white px-3 py-1 rounded-full text-xs font-semibold">NumPy</span>
-              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Optimization</span>
-            </div>
-            <span class="text-xs text-gray-400 mb-2">04/2024 – Present</span>
-            <a href="https://github.com/adibamba/flight-path-optimization" target="_blank" class="mt-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-indigo-600 hover:to-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">View on GitHub</a>
-          </div>
-
-          <!-- New Project: Learn Terraform Azure -->
-          <div class="bg-gradient-to-br from-blue-900 to-indigo-900 rounded-xl shadow-lg p-6 flex flex-col items-start border-2 border-blue-600/80 transition-transform hover:scale-105 duration-300">
-            <div class="w-full flex items-center gap-2 mb-2">
-              <i class="fas fa-cloud text-blue-400 text-2xl"></i>
-              <h3 class="text-xl font-bold text-white">Learn Terraform — Azure</h3>
-            </div>
-            <p class="text-gray-200 mb-2">Hands-on Terraform examples and modules for Azure: networking, compute, and identity resources to accelerate infrastructure as code learning.</p>
-            <div class="flex flex-wrap gap-2 mb-2">
-              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Terraform</span>
-              <span class="bg-indigo-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Azure</span>
-              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">IaC</span>
-            </div>
-            <span class="text-xs text-gray-400 mb-2">02/2024 – Present</span>
-            <a href="https://github.com/adibamba/learn-terraform-azure" target="_blank" class="mt-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-indigo-600 hover:to-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">View on GitHub</a>
-          </div>
-
-          <!-- New Project: Secure Authentication (Node.js + PostgreSQL) -->
-          <div class="bg-gradient-to-br from-blue-900 to-indigo-900 rounded-xl shadow-lg p-6 flex flex-col items-start border-2 border-blue-600/80 transition-transform hover:scale-105 duration-300">
-            <div class="w-full flex items-center gap-2 mb-2">
-              <i class="fas fa-lock text-blue-400 text-2xl"></i>
-              <h3 class="text-xl font-bold text-white">Secure Authentication with Node.js & PostgreSQL</h3>
-            </div>
-            <p class="text-gray-200 mb-2">A secure authentication system built with Node.js, Express, bcrypt, JWT, and PostgreSQL. Includes best practices for password storage and session management.</p>
-            <div class="flex flex-wrap gap-2 mb-2">
-              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Node.js</span>
-              <span class="bg-indigo-700 text-white px-3 py-1 rounded-full text-xs font-semibold">PostgreSQL</span>
-              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Express</span>
-            </div>
-            <span class="text-xs text-gray-400 mb-2">11/2023 – Present</span>
-            <a href="https://github.com/adibamba/Secure-Authentication-with-Node.js-PostgreSQL" target="_blank" class="mt-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-indigo-600 hover:to-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">View on GitHub</a>
-          </div>
-
+        <h2 class="text-3xl font-bold text-blue-400 mb-6 flex items-center gap-2"><i class="fas fa-project-diagram animate-bounce"></i> Projects</h2>
+        
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap gap-3 mb-8 justify-center">
+          <button class="filter-btn active bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-2 rounded-full font-semibold transition-all hover:scale-105" data-filter="all">
+            All Projects
+          </button>
+          <button class="filter-btn bg-gray-700 hover:bg-gray-600 text-white px-5 py-2 rounded-full font-semibold transition-all hover:scale-105" data-filter="cloud">
+            <i class="fas fa-cloud"></i> Cloud
+          </button>
+          <button class="filter-btn bg-gray-700 hover:bg-gray-600 text-white px-5 py-2 rounded-full font-semibold transition-all hover:scale-105" data-filter="security">
+            <i class="fas fa-shield-alt"></i> Security
+          </button>
+          <button class="filter-btn bg-gray-700 hover:bg-gray-600 text-white px-5 py-2 rounded-full font-semibold transition-all hover:scale-105" data-filter="ml">
+            <i class="fas fa-brain"></i> ML/Science
+          </button>
+        </div>
+        
+        <!-- Projects Grid (will be populated dynamically) -->
+        <div id="projects-grid" class="grid md:grid-cols-2 gap-8">
+          <!-- Projects will be loaded here dynamically -->
         </div>
       </div>
     </section>
@@ -280,10 +243,48 @@
     </section>
   </main>
 
+  <!-- Project Detail Modal -->
+  <div id="project-modal" class="modal">
+    <div class="modal-content">
+      <div class="bg-gradient-to-r from-blue-600 to-indigo-600 p-6 rounded-t-xl">
+        <div class="flex justify-between items-start">
+          <div class="flex items-center gap-3">
+            <i id="modal-icon" class="fas text-white text-3xl"></i>
+            <h3 id="modal-title" class="text-2xl font-bold text-white"></h3>
+          </div>
+          <button id="modal-close" class="text-white hover:text-gray-200 text-2xl transition">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <div class="p-6">
+        <p id="modal-description" class="text-gray-200 text-lg mb-4"></p>
+        <div class="mb-4">
+          <h4 class="text-blue-400 font-semibold mb-2">Technologies:</h4>
+          <div id="modal-tags" class="flex flex-wrap gap-2"></div>
+        </div>
+        <div class="mb-4">
+          <p class="text-gray-400"><i class="fas fa-calendar-alt"></i> <span id="modal-period"></span></p>
+        </div>
+        <div class="flex gap-3 flex-wrap">
+          <a id="modal-github-link" href="#" target="_blank" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-indigo-600 hover:to-blue-600 text-white px-6 py-3 rounded-full font-semibold transition-all hover:scale-105 flex items-center gap-2">
+            <i class="fab fa-github"></i> View on GitHub
+          </a>
+          <button id="modal-copy-link" class="bg-gray-700 hover:bg-gray-600 text-white px-6 py-3 rounded-full font-semibold transition-all hover:scale-105 flex items-center gap-2">
+            <i class="fas fa-copy"></i> Copy Link
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <footer class="text-center py-8 text-gray-400 text-sm mt-12">
     &copy; 2024 Abdoulie A.J. All rights reserved.
   </footer>
 
+  <!-- Load projects data -->
+  <script src="projects.js"></script>
+  
   <!-- TypewriterJS for dynamic typing effect -->
   <script src="https://unpkg.com/typewriter-effect@2.18.0/dist/core.js"></script>
   <script>
@@ -293,6 +294,7 @@
     menuBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
     });
+    
     // Typewriter effect
     const typewriter = new Typewriter('#typewriter', {
       loop: true,
@@ -310,6 +312,7 @@
       .pauseFor(1800)
       .deleteAll()
       .start();
+    
     // Fade-in on scroll
     const fadeSections = document.querySelectorAll('section, header');
     const fadeIn = (el) => {
@@ -327,9 +330,146 @@
     fadeSections.forEach(section => {
       observerFade.observe(section);
     });
-    // Animate icons (e.g., floating effect)
+    
+    // Animate icons
     document.querySelectorAll('.animated-svg, .fa-linkedin').forEach(icon => {
       icon.classList.add('animated-svg');
+    });
+    
+    // ===== PROJECTS FUNCTIONALITY =====
+    
+    // Render project cards
+    function renderProjects(filter = 'all') {
+      const grid = document.getElementById('projects-grid');
+      grid.innerHTML = '';
+      
+      const filteredProjects = filter === 'all' 
+        ? window.projects 
+        : window.projects.filter(p => p.category === filter);
+      
+      filteredProjects.forEach(project => {
+        const card = document.createElement('div');
+        card.className = 'project-card bg-gradient-to-br from-blue-900 to-indigo-900 rounded-xl shadow-lg p-6 flex flex-col items-start border-2 border-blue-600/80 transition-transform hover:scale-105 duration-300';
+        card.setAttribute('data-category', project.category);
+        
+        const tagsHTML = project.tags.map(tag => 
+          `<span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">${tag}</span>`
+        ).join('');
+        
+        card.innerHTML = `
+          <div class="w-full flex items-center gap-2 mb-2">
+            <i class="fas fa-${project.icon} text-blue-400 text-2xl"></i>
+            <h3 class="text-xl font-bold text-white">${project.title}</h3>
+          </div>
+          <p class="text-gray-200 mb-2 line-clamp-3">${project.description}</p>
+          <div class="flex flex-wrap gap-2 mb-2">
+            ${tagsHTML}
+          </div>
+          <span class="text-xs text-gray-400 mb-2">${project.period}</span>
+          <div class="mt-auto flex gap-2 flex-wrap">
+            <a href="${project.link}" target="_blank" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-indigo-600 hover:to-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold transition-all hover:scale-105">
+              View on GitHub
+            </a>
+            <button class="details-btn bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-full text-sm font-semibold transition-all hover:scale-105" data-project-id="${project.id}">
+              Details
+            </button>
+          </div>
+        `;
+        
+        grid.appendChild(card);
+      });
+      
+      // Attach event listeners to detail buttons
+      document.querySelectorAll('.details-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const projectId = e.currentTarget.getAttribute('data-project-id');
+          openModal(projectId);
+        });
+      });
+    }
+    
+    // Filter buttons
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        // Update active state
+        document.querySelectorAll('.filter-btn').forEach(b => {
+          b.classList.remove('active', 'bg-gradient-to-r', 'from-blue-600', 'to-indigo-600');
+          b.classList.add('bg-gray-700');
+        });
+        e.currentTarget.classList.remove('bg-gray-700');
+        e.currentTarget.classList.add('active', 'bg-gradient-to-r', 'from-blue-600', 'to-indigo-600');
+        
+        // Filter projects
+        const filter = e.currentTarget.getAttribute('data-filter');
+        renderProjects(filter);
+      });
+    });
+    
+    // Modal functionality
+    const modal = document.getElementById('project-modal');
+    const modalClose = document.getElementById('modal-close');
+    
+    function openModal(projectId) {
+      const project = window.projects.find(p => p.id === projectId);
+      if (!project) return;
+      
+      document.getElementById('modal-icon').className = `fas fa-${project.icon} text-white text-3xl`;
+      document.getElementById('modal-title').textContent = project.title;
+      document.getElementById('modal-description').textContent = project.description;
+      document.getElementById('modal-period').textContent = project.period;
+      document.getElementById('modal-github-link').href = project.link;
+      
+      const tagsContainer = document.getElementById('modal-tags');
+      tagsContainer.innerHTML = project.tags.map(tag => 
+        `<span class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 py-2 rounded-full text-sm font-semibold">${tag}</span>`
+      ).join('');
+      
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeModal() {
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+    
+    // Close modal on X button
+    modalClose.addEventListener('click', closeModal);
+    
+    // Close modal on backdrop click
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+    
+    // Close modal on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+    
+    // Copy link functionality
+    document.getElementById('modal-copy-link').addEventListener('click', () => {
+      const link = document.getElementById('modal-github-link').href;
+      navigator.clipboard.writeText(link).then(() => {
+        const btn = document.getElementById('modal-copy-link');
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        btn.classList.add('bg-green-600');
+        btn.classList.remove('bg-gray-700');
+        setTimeout(() => {
+          btn.innerHTML = originalHTML;
+          btn.classList.remove('bg-green-600');
+          btn.classList.add('bg-gray-700');
+        }, 2000);
+      });
+    });
+    
+    // Initialize projects on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      renderProjects('all');
     });
   </script>
 </body>
