@@ -24,7 +24,7 @@ window.Portfolio.projects = [
   },
   {
     id: 'learn-terraform-azure',
-    title: 'Learn Terraform — Azure',
+    title: 'Learn Terraform - Azure',
     description: 'Hands-on Terraform examples and modules for Azure: networking, compute, and identity resources to accelerate infrastructure as code learning.',
     tags: ['Terraform', 'Azure', 'IaC'],
     period: '02/2024 – Present',

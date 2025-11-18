@@ -337,6 +337,17 @@
     
     // ===== PROJECTS FUNCTIONALITY =====
     
+    // Helper functions for filter styling
+    function setActiveFilter(btn) {
+      btn.classList.remove('bg-gray-700');
+      btn.classList.add('active', 'bg-gradient-to-r', 'from-blue-600', 'to-indigo-600');
+    }
+    
+    function setInactiveFilter(btn) {
+      btn.classList.remove('active', 'bg-gradient-to-r', 'from-blue-600', 'to-indigo-600');
+      btn.classList.add('bg-gray-700');
+    }
+    
     // Render project cards
     function renderProjects(filter = 'all') {
       const grid = document.getElementById('projects-grid');
@@ -391,12 +402,8 @@
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         // Update active state
-        document.querySelectorAll('.filter-btn').forEach(b => {
-          b.classList.remove('active', 'bg-gradient-to-r', 'from-blue-600', 'to-indigo-600');
-          b.classList.add('bg-gray-700');
-        });
-        e.currentTarget.classList.remove('bg-gray-700');
-        e.currentTarget.classList.add('active', 'bg-gradient-to-r', 'from-blue-600', 'to-indigo-600');
+        document.querySelectorAll('.filter-btn').forEach(b => setInactiveFilter(b));
+        setActiveFilter(e.currentTarget);
         
         // Filter projects
         const filter = e.currentTarget.getAttribute('data-filter');
@@ -455,8 +462,8 @@
       const btn = document.getElementById('modal-copy-link');
       const originalHTML = btn.innerHTML;
       
-      // Try Clipboard API first
-      if (navigator.clipboard && navigator.clipboard.writeText) {
+      // Try Clipboard API first (requires secure context)
+      if (window.isSecureContext && navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(link).then(() => {
           btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
           btn.classList.add('bg-green-600');
@@ -471,7 +478,7 @@
           fallbackCopyToClipboard(link, btn, originalHTML);
         });
       } else {
-        // Fallback for browsers without clipboard API
+        // Fallback for browsers without clipboard API or non-secure context
         fallbackCopyToClipboard(link, btn, originalHTML);
       }
     });
@@ -510,10 +517,8 @@
       document.body.removeChild(textArea);
     }
     
-    // Initialize projects on page load
-    window.addEventListener('DOMContentLoaded', () => {
-      renderProjects('all');
-    });
+    // Initialize projects immediately (script is at end of body)
+    renderProjects('all');
   </script>
 </body>
 </html>
