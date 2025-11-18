@@ -5,9 +5,8 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SXLK780G28"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag(){dataLayer.push(arguments);} 
   gtag('js', new Date());
-
   gtag('config', 'G-SXLK780G28');
 </script>
   <meta charset="UTF-8">
@@ -17,320 +16,308 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <meta name="description" content="Abdoulie A.J. - Cloud Engineer and Mathematical Engineering Student specializing in Azure solutions and advanced mathematics.">
-  <style>body { font-family: 'Inter', sans-serif; }</style>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .card-glow { box-shadow: 0 8px 30px rgba(99,102,241,0.09), inset 0 1px 0 rgba(255,255,255,0.02); }
+    .glass { backdrop-filter: blur(6px); background: rgba(255,255,255,0.02); }
+    .skill-bar { background: linear-gradient(90deg, rgba(99,102,241,0.9), rgba(59,130,246,0.9)); height: 8px; border-radius: 999px; }
+    /* Modal styles */
+    .modal-backdrop { position: fixed; inset: 0; background: rgba(2,6,23,0.6); display: none; align-items: center; justify-content: center; z-index: 60; }
+    .modal { background: #0b1220; border: 1px solid rgba(99,102,241,0.08); padding: 1.25rem; border-radius: 0.75rem; max-width: 800px; width: 95%; color: #e6eef8; }
+  </style>
 </head>
-<body class="bg-gradient-to-br from-[#181c2f] via-[#232946] to-[#3b82f6] min-h-screen text-gray-100">
+<body class="bg-gradient-to-br from-[#0b1220] via-[#111827] to-[#0f172a] min-h-screen text-gray-100">
   <!-- Navbar -->
-  <nav class="fixed w-full z-50 bg-black/60 backdrop-blur shadow-sm">
+  <nav class="fixed w-full z-50 bg-black/50 backdrop-blur-md">
     <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
-      <div class="text-2xl font-bold text-blue-400">AAJ</div>
+      <div class="text-2xl font-extrabold text-indigo-400">AAJ</div>
       <ul class="hidden md:flex gap-8 font-medium">
-        <li><a href="#about" class="hover:text-blue-400 transition">About</a></li>
-        <li><a href="#skills" class="hover:text-blue-400 transition">Skills</a></li>
-        <li><a href="#projects" class="hover:text-blue-400 transition">Projects</a></li>
-        <li><a href="#contact" class="hover:text-blue-400 transition">Contact</a></li>
+        <li><a href="#about" class="hover:text-indigo-300 transition">About</a></li>
+        <li><a href="#skills" class="hover:text-indigo-300 transition">Skills</a></li>
+        <li><a href="#projects" class="hover:text-indigo-300 transition">Projects</a></li>
+        <li><a href="#contact" class="hover:text-indigo-300 transition">Contact</a></li>
       </ul>
-      <button class="md:hidden text-2xl text-blue-400" id="menu-btn"><i class="fas fa-bars"></i></button>
+      <div class="hidden md:flex gap-3">
+        <a href="mailto:adi13218005155@outlook.com" class="text-sm bg-indigo-600 hover:bg-indigo-500 px-4 py-2 rounded-full text-white transition">Hire me</a>
+        <a href="https://github.com/adibamba" target="_blank" class="text-indigo-200 hover:text-white transition"><i class="fab fa-github text-xl"></i></a>
+      </div>
+      <button class="md:hidden text-2xl text-indigo-400" id="menu-btn"><i class="fas fa-bars"></i></button>
     </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-black/90 px-6 py-4">
+    <div id="mobile-menu" class="hidden md:hidden bg-black/80 px-6 py-4">
       <ul class="flex flex-col gap-4 text-lg">
-        <li><a href="#about" class="hover:text-blue-400 transition">About</a></li>
-        <li><a href="#skills" class="hover:text-blue-400 transition">Skills</a></li>
-        <li><a href="#projects" class="hover:text-blue-400 transition">Projects</a></li>
-        <li><a href="#contact" class="hover:text-blue-400 transition">Contact</a></li>
+        <li><a href="#about" class="hover:text-indigo-300 transition">About</a></li>
+        <li><a href="#skills" class="hover:text-indigo-300 transition">Skills</a></li>
+        <li><a href="#projects" class="hover:text-indigo-300 transition">Projects</a></li>
+        <li><a href="#contact" class="hover:text-indigo-300 transition">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <header class="relative flex flex-col items-center justify-center min-h-screen pt-32 pb-16 text-center overflow-hidden bg-gradient-to-br from-[#232946] via-[#181c2f] to-[#3b82f6]">
-    <div class="absolute inset-0 -z-10 animate-gradient bg-gradient-to-tr from-blue-900 via-indigo-900 to-black opacity-80"></div>
-    <svg class="absolute top-0 left-0 w-96 h-96 opacity-20 -z-10 animated-svg" viewBox="0 0 200 200"><circle cx="100" cy="100" r="100" fill="#6366f1"/></svg>
-    <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-2 drop-shadow-lg">Abdoulie A.J.</h1>
-    <h2 class="text-2xl md:text-3xl font-bold text-blue-400 mb-4 min-h-[2.5rem] drop-shadow">
-      <span id="typewriter"></span>
-    </h2>
-    <p class="text-xl text-gray-200 mb-6">Bridging cloud technology with mathematical precision</p>
-    <div class="flex flex-wrap items-center justify-center gap-4 mb-4">
-      <a href="mailto:adi13218005155@outlook.com" class="text-blue-300 hover:underline flex items-center gap-2"><i class="fas fa-envelope"></i>adi13218005155@outlook.com</a>
-      <span class="text-gray-400">|</span>
-      <span class="flex items-center gap-2"><i class="fas fa-map-marker-alt"></i>Rome, Italy</span>
-      <span class="text-gray-400">|</span>
-      <span class="flex items-center gap-2"><i class="fas fa-phone"></i>+39 339 115 4233</span>
+  <!-- Hero -->
+  <header class="relative flex flex-col items-center justify-center min-h-[78vh] pt-28 pb-12 text-center overflow-hidden">
+    <div class="absolute inset-0 -z-10 bg-gradient-to-br from-indigo-900/30 via-indigo-700/10 to-transparent"></div>
+    <div class="max-w-4xl mx-auto px-6">
+      <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-lg">Abdoulie A.J.<span class="text-indigo-300"> — Cloud & Security Engineer</span></h1>
+      <p class="mt-4 text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">I design secure cloud architectures and build production-ready automation to help organizations scale securely. I combine Azure expertise with strong mathematical foundations to solve complex problems.</p>
+
+      <div class="mt-6 flex flex-wrap gap-3 items-center justify-center">
+        <a href="mailto:adi13218005155@outlook.com" class="bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-3 rounded-full font-semibold shadow">Get in touch</a>
+        <a href="#projects" class="border border-indigo-600 text-indigo-200 px-5 py-3 rounded-full hover:bg-indigo-600/20 transition">See projects</a>
+        <a href="https://github.com/adibamba" target="_blank" class="text-indigo-300 px-3 py-2 rounded-full"><i class="fab fa-github text-2xl"></i></a>
+      </div>
+
+      <div class="mt-8 flex items-center gap-4 justify-center">
+        <div class="text-sm text-gray-300 flex items-center gap-2"><i class="fas fa-map-marker-alt text-indigo-300"></i> Rome, Italy</div>
+        <div class="text-sm text-gray-300">|</div>
+        <div class="text-sm text-gray-300 flex items-center gap-2"><i class="fas fa-envelope text-indigo-300"></i> adi13218005155@outlook.com</div>
+      </div>
     </div>
-    <div class="flex gap-4 justify-center">
-      <a href="https://www.linkedin.com/in/abdoulie-a-j-339ba4226" target="_blank" aria-label="LinkedIn" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-12 h-12 flex items-center justify-center"><i class="fab fa-linkedin"></i></a>
-    </div>
-    <svg class="absolute bottom-0 right-0 w-96 h-96 opacity-20 -z-10 animated-svg" viewBox="0 0 200 200"><circle cx="100" cy="100" r="100" fill="#2563eb"/></svg>
   </header>
 
-  <main class="max-w-5xl mx-auto px-4">
-    <!-- About Section -->
-    <section id="about" class="my-24 opacity-0 translate-y-8 transition-all duration-700 ease-out will-change-transform flex flex-col md:flex-row gap-8 items-center justify-center">
-      <div class="bg-black/70 rounded-2xl shadow-2xl p-8 flex-1 min-w-[300px] max-w-xl">
-        <h2 class="text-3xl font-bold text-blue-400 mb-4 flex items-center gap-2"><i class="fas fa-user-circle animate-bounce"></i> About Me</h2>
-        <p class="text-lg text-gray-200">Cloud & Security Engineer with over 5 years of experience in Azure AD, Office 365 migrations, and enterprise identity/security frameworks. Led migrations impacting thousands of users and designed secure identity architectures to meet compliance and business needs.</p>
-        <div class="mt-4 space-y-2">
-          <p class="text-blue-400 font-semibold">Email: <span class="text-white font-normal">adi13218005155@outlook.com</span></p>
-          <p class="text-blue-400 font-semibold">Location: <span class="text-white font-normal">Rome, Italy</span></p>
-          <p class="text-blue-400 font-semibold">Education: <span class="text-white font-normal">MSc in Mathematical Engineering (Scientific Computing)</span></p>
-        </div>
-      </div>
-      <div class="bg-gradient-to-br from-[#232946] to-[#181c2f] rounded-2xl shadow-2xl p-8 flex-1 min-w-[300px] max-w-md flex flex-col items-center border-4 border-blue-600/80">
-        <img src="profile.pic.jpg" alt="Profile Picture" class="w-32 h-32 mb-4 rounded-full border-4 border-blue-500 shadow-xl object-cover" />
-        <h3 class="text-2xl font-bold text-white mb-1">Abdoulie A.J.</h3>
-        <p class="text-blue-400 mb-4">Cloud Engineer & Security Specialist</p>
-        <div class="flex gap-6 mt-2">
-          <a href="https://www.linkedin.com/in/abdoulie-a-j-339ba4226" target="_blank" aria-label="LinkedIn" class="text-blue-400 hover:text-blue-300 text-3xl transition"><i class="fab fa-linkedin"></i></a>
-        </div>
-      </div>
-    </section>
+  <main class="max-w-6xl mx-auto px-6">
 
-    <!-- Skills Section -->
-    <section id="skills" class="my-24 opacity-0 translate-y-8 transition-all duration-700 ease-out will-change-transform">
-      <div class="bg-black/70 rounded-2xl shadow-2xl p-8">
-        <h2 class="text-3xl font-bold text-blue-400 mb-4 flex items-center gap-2"><i class="fas fa-cogs animate-spin"></i> Skills</h2>
-        <div class="grid md:grid-cols-2 gap-8">
+    <!-- About -->
+    <section id="about" class="my-12 grid md:grid-cols-3 gap-8 items-start">
+      <div class="md:col-span-2 bg-gradient-to-br from-[#0f172a]/60 to-[#111827]/50 rounded-2xl p-8 card-glow glass border border-indigo-800/30">
+        <h2 class="text-2xl font-bold text-white mb-3">About Me</h2>
+        <p class="text-gray-300 leading-relaxed">Cloud & Security Engineer with over 5 years' experience in Azure AD/Entra ID, Microsoft 365 migrations, identity & access design, and automation (Terraform/Bicep). I deliver secure, maintainable infrastructure and practical ML/analysis solutions backed by my Mathematical Engineering studies.</p>
+
+        <div class="mt-6 grid sm:grid-cols-2 gap-4">
           <div>
-            <h3 class="text-lg font-semibold text-blue-300 mb-2">Technical Skills</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-1 rounded-full shadow">Azure AD/Entra ID</span>
-              <span class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-1 rounded-full shadow">PowerShell/Bicep/Terraform</span>
-              <span class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-1 rounded-full shadow">Microsoft 365</span>
-              <span class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-1 rounded-full shadow">Linux</span>
-              <span class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-1 rounded-full shadow">Python & MATLAB</span>
-              <span class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-1 rounded-full shadow">Bash scripting</span>
-              <span class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-1 rounded-full shadow">CI/CD principles/DevOps</span>
-              <span class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-1 rounded-full shadow">Git</span>
-              <span class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-1 rounded-full shadow">Role-based access control</span>
-              <span class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-1 rounded-full shadow">OAuth</span>
-              <span class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-1 rounded-full shadow">AIP policies</span>
-              <span class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-1 rounded-full shadow">Azure ML</span>
-              <span class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-1 rounded-full shadow">Pandas</span>
-              <span class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-4 py-1 rounded-full shadow">Matplotlib</span>
-            </div>
+            <p class="text-indigo-300 font-semibold">Email</p>
+            <p class="text-gray-200">adi13218005155@outlook.com</p>
           </div>
           <div>
-            <h3 class="text-lg font-semibold text-blue-300 mb-2">Soft Skills</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-gradient-to-r from-indigo-500 to-blue-500 text-white px-4 py-1 rounded-full shadow">Communication & Collaboration</span>
-              <span class="bg-gradient-to-r from-indigo-500 to-blue-500 text-white px-4 py-1 rounded-full shadow">Problem Solving</span>
-              <span class="bg-gradient-to-r from-indigo-500 to-blue-500 text-white px-4 py-1 rounded-full shadow">Adaptability</span>
-              <span class="bg-gradient-to-r from-indigo-500 to-blue-500 text-white px-4 py-1 rounded-full shadow">Time Management</span>
-              <span class="bg-gradient-to-r from-indigo-500 to-blue-500 text-white px-4 py-1 rounded-full shadow">Teamwork</span>
-              <span class="bg-gradient-to-r from-indigo-500 to-blue-500 text-white px-4 py-1 rounded-full shadow">Leadership</span>
-              <span class="bg-gradient-to-r from-indigo-500 to-blue-500 text-white px-4 py-1 rounded-full shadow">Creativity & Innovation</span>
-              <span class="bg-gradient-to-r from-indigo-500 to-blue-500 text-white px-4 py-1 rounded-full shadow">Customer Support</span>
-            </div>
+            <p class="text-indigo-300 font-semibold">Location</p>
+            <p class="text-gray-200">Rome, Italy</p>
+          </div>
+          <div>
+            <p class="text-indigo-300 font-semibold">Education</p>
+            <p class="text-gray-200">MSc — Mathematical Engineering (Scientific Computing)</p>
+          </div>
+          <div>
+            <p class="text-indigo-300 font-semibold">Open to</p>
+            <p class="text-gray-200">Cloud/Security roles, consulting, contract work</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="bg-gradient-to-br from-indigo-900/30 to-transparent rounded-2xl p-6 border border-indigo-800/20">
+        <img src="profile.pic.jpg" alt="Profile" class="w-28 h-28 rounded-full border-4 border-indigo-600 shadow-lg object-cover mx-auto mb-4" />
+        <h3 class="text-xl font-semibold text-white text-center">Abdoulie A.J.</h3>
+        <p class="text-indigo-300 text-center">Cloud Engineer & Security Specialist</p>
+        <div class="mt-4 flex justify-center gap-3">
+          <a href="https://www.linkedin.com/in/abdoulie-a-j-339ba4226" target="_blank" class="text-indigo-200 hover:text-white"><i class="fab fa-linkedin fa-2x"></i></a>
+          <a href="https://github.com/adibamba" target="_blank" class="text-indigo-200 hover:text-white"><i class="fab fa-github fa-2x"></i></a>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="my-12 bg-black/40 rounded-2xl p-8 border border-indigo-800/20">
+      <h2 class="text-2xl font-bold text-white mb-4">Skills & Tools</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="text-indigo-300 font-semibold">Core</h3>
+          <ul class="mt-3 space-y-2 text-gray-200">
+            <li>Azure / Azure AD / Entra ID</li>
+            <li>Microsoft 365 migrations & governance</li>
+            <li>Terraform, Bicep, PowerShell</li>
+            <li>Identity & Access Management (RBAC, OAuth, AAD)</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-indigo-300 font-semibold">Programming & Data</h3>
+          <ul class="mt-3 space-y-2 text-gray-200">
+            <li>Python (Pandas, NumPy, scikit-learn)</li>
+            <li>Node.js / Express</li>
+            <li>SQL / PostgreSQL</li>
+            <li>CI/CD and Git</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-6 grid sm:grid-cols-2 gap-4">
+        <div>
+          <p class="text-sm text-gray-300">Cloud Architecture</p>
+          <div class="mt-2 bg-gray-800 rounded-full p-1">
+            <div class="skill-bar w-4/5 rounded-full"></div>
+          </div>
+        </div>
+        <div>
+          <p class="text-sm text-gray-300">Automation (IaC + Scripting)</p>
+          <div class="mt-2 bg-gray-800 rounded-full p-1">
+            <div class="skill-bar w-3/4 rounded-full"></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="my-24 opacity-0 translate-y-8 transition-all duration-700 ease-out will-change-transform">
-      <div class="bg-black/70 rounded-2xl shadow-2xl p-8">
-        <h2 class="text-3xl font-bold text-blue-400 mb-4 flex items-center gap-2"><i class="fas fa-project-diagram animate-bounce"></i> Projects</h2>
-        <div class="grid md:grid-cols-2 gap-8">
-          <!-- Project 1: Phishing Website Classification -->
-          <div class="bg-gradient-to-br from-blue-900 to-indigo-900 rounded-xl shadow-lg p-6 flex flex-col items-start border-2 border-blue-600/80 transition-transform hover:scale-105 duration-300">
-            <div class="w-full flex items-center gap-2 mb-2">
-              <i class="fas fa-shield-alt text-blue-400 text-2xl"></i>
-              <h3 class="text-xl font-bold text-white">Phishing Website Classification</h3>
-            </div>
-            <p class="text-gray-200 mb-2">A machine learning model to detect phishing websites using features from the UCI dataset. Includes data preprocessing, feature selection, and model evaluation.</p>
-            <div class="flex flex-wrap gap-2 mb-2">
-              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Python</span>
-              <span class="bg-indigo-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Scikit-learn</span>
-              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Pandas</span>
-              <span class="bg-indigo-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Jupyter</span>
-            </div>
-            <span class="text-xs text-gray-400 mb-2">01/05/2024 – 15/06/2024</span>
-            <a href="https://github.com/adibamba/phishing-classification" target="_blank" class="mt-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-indigo-600 hover:to-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">View on GitHub</a>
-          </div>
-
-          <!-- Project 2: Azure Virtual Machine Deployment using Bicep -->
-          <div class="bg-gradient-to-br from-blue-900 to-indigo-900 rounded-xl shadow-lg p-6 flex flex-col items-start border-2 border-blue-600/80 transition-transform hover:scale-105 duration-300">
-            <div class="w-full flex items-center gap-2 mb-2">
-              <i class="fas fa-server text-blue-400 text-2xl"></i>
-              <h3 class="text-xl font-bold text-white">Azure Virtual Machine Deployment using Bicep</h3>
-            </div>
-            <p class="text-gray-200 mb-2">Automated deployment of a Windows VM in Azure using Bicep Infrastructure as Code templates.</p>
-            <div class="flex flex-wrap gap-2 mb-2">
-              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Azure</span>
-              <span class="bg-indigo-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Bicep</span>
-              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">PowerShell</span>
-            </div>
-            <span class="text-xs text-gray-400 mb-2">20/03/2024 – 28/03/2024</span>
-            <a href="https://github.com/adibamba/-Azure-Virtual-Machine-Deployment-using-Bicep" target="_blank" class="mt-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-indigo-600 hover:to-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">View on GitHub</a>
-          </div>
-
-          <!-- Project 3: Exchange Online Technical Support Report -->
-          <div class="bg-gradient-to-br from-blue-900 to-indigo-900 rounded-xl shadow-lg p-6 flex flex-col items-start border-2 border-blue-600/80 transition-transform hover:scale-105 duration-300">
-            <div class="w-full flex items-center gap-2 mb-2">
-              <i class="fas fa-file-alt text-blue-400 text-2xl"></i>
-              <h3 class="text-xl font-bold text-white">Exchange Online Technical Support Report</h3>
-            </div>
-            <p class="text-gray-200 mb-2">A PowerShell script to generate diagnostic reports and automate common support tasks for Exchange Online environments.</p>
-            <div class="flex flex-wrap gap-2 mb-2">
-              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">PowerShell</span>
-              <span class="bg-indigo-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Microsoft 365</span>
-            </div>
-            <span class="text-xs text-gray-400 mb-2">10/01/2024 – 20/01/2024</span>
-            <a href="https://github.com/adibamba/ExchangeOnline-technical-support-report" target="_blank" class="mt-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-indigo-600 hover:to-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">View on GitHub</a>
-          </div>
-
-          <!-- Project 4: 2D Ising Monte Carlo Simulation -->
-          <div class="bg-gradient-to-br from-blue-900 to-indigo-900 rounded-xl shadow-lg p-6 flex flex-col items-start border-2 border-blue-600/80 transition-transform hover:scale-105 duration-300">
-            <div class="w-full flex items-center gap-2 mb-2">
-              <i class="fas fa-chart-area text-blue-400 text-2xl"></i>
-              <h3 class="text-xl font-bold text-white">2D Ising Monte Carlo Simulation</h3>
-            </div>
-            <p class="text-gray-200 mb-2">Simulates the 2D Ising model using Monte Carlo methods to visualize phase transitions in statistical physics.</p>
-            <div class="flex flex-wrap gap-2 mb-2">
-              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Python</span>
-              <span class="bg-indigo-700 text-white px-3 py-1 rounded-full text-xs font-semibold">NumPy</span>
-              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Matplotlib</span>
-            </div>
-            <span class="text-xs text-gray-400 mb-2">01/07/2023 – 15/07/2023</span>
-            <a href="https://github.com/adibamba/2d-ising-monte-carlo" target="_blank" class="mt-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-indigo-600 hover:to-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">View on GitHub</a>
-          </div>
-
-          <!-- New Project: Avionics Cybersecurity Simulation -->
-          <div class="bg-gradient-to-br from-blue-900 to-indigo-900 rounded-xl shadow-lg p-6 flex flex-col items-start border-2 border-blue-600/80 transition-transform hover:scale-105 duration-300">
-            <div class="w-full flex items-center gap-2 mb-2">
-              <i class="fas fa-plane text-blue-400 text-2xl"></i>
-              <h3 class="text-xl font-bold text-white">Avionics Cybersecurity Simulation</h3>
-            </div>
-            <p class="text-gray-200 mb-2">A simulation environment for avionics systems focusing on cybersecurity: threat scenarios, intrusion detection experiments, and resilience testing.</p>
-            <div class="flex flex-wrap gap-2 mb-2">
-              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Python</span>
-              <span class="bg-indigo-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Simulation</span>
-              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Cybersecurity</span>
-            </div>
-            <span class="text-xs text-gray-400 mb-2">06/2024 – Present</span>
-            <a href="https://github.com/adibamba/avionics-cybersecurity-simulation" target="_blank" class="mt-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-indigo-600 hover:to-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">View on GitHub</a>
-          </div>
-
-          <!-- New Project: Flight Path Optimization -->
-          <div class="bg-gradient-to-br from-blue-900 to-indigo-900 rounded-xl shadow-lg p-6 flex flex-col items-start border-2 border-blue-600/80 transition-transform hover:scale-105 duration-300">
-            <div class="w-full flex items-center gap-2 mb-2">
-              <i class="fas fa-route text-blue-400 text-2xl"></i>
-              <h3 class="text-xl font-bold text-white">Flight Path Optimization</h3>
-            </div>
-            <p class="text-gray-200 mb-2">Optimization algorithms for flight paths to reduce fuel consumption and emissions using numerical methods and heuristic optimization.</p>
-            <div class="flex flex-wrap gap-2 mb-2">
-              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Python</span>
-              <span class="bg-indigo-700 text-white px-3 py-1 rounded-full text-xs font-semibold">NumPy</span>
-              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Optimization</span>
-            </div>
-            <span class="text-xs text-gray-400 mb-2">04/2024 – Present</span>
-            <a href="https://github.com/adibamba/flight-path-optimization" target="_blank" class="mt-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-indigo-600 hover:to-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">View on GitHub</a>
-          </div>
-
-          <!-- New Project: Learn Terraform Azure -->
-          <div class="bg-gradient-to-br from-blue-900 to-indigo-900 rounded-xl shadow-lg p-6 flex flex-col items-start border-2 border-blue-600/80 transition-transform hover:scale-105 duration-300">
-            <div class="w-full flex items-center gap-2 mb-2">
-              <i class="fas fa-cloud text-blue-400 text-2xl"></i>
-              <h3 class="text-xl font-bold text-white">Learn Terraform — Azure</h3>
-            </div>
-            <p class="text-gray-200 mb-2">Hands-on Terraform examples and modules for Azure: networking, compute, and identity resources to accelerate infrastructure as code learning.</p>
-            <div class="flex flex-wrap gap-2 mb-2">
-              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Terraform</span>
-              <span class="bg-indigo-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Azure</span>
-              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">IaC</span>
-            </div>
-            <span class="text-xs text-gray-400 mb-2">02/2024 – Present</span>
-            <a href="https://github.com/adibamba/learn-terraform-azure" target="_blank" class="mt-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-indigo-600 hover:to-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">View on GitHub</a>
-          </div>
-
-          <!-- New Project: Secure Authentication (Node.js + PostgreSQL) -->
-          <div class="bg-gradient-to-br from-blue-900 to-indigo-900 rounded-xl shadow-lg p-6 flex flex-col items-start border-2 border-blue-600/80 transition-transform hover:scale-105 duration-300">
-            <div class="w-full flex items-center gap-2 mb-2">
-              <i class="fas fa-lock text-blue-400 text-2xl"></i>
-              <h3 class="text-xl font-bold text-white">Secure Authentication with Node.js & PostgreSQL</h3>
-            </div>
-            <p class="text-gray-200 mb-2">A secure authentication system built with Node.js, Express, bcrypt, JWT, and PostgreSQL. Includes best practices for password storage and session management.</p>
-            <div class="flex flex-wrap gap-2 mb-2">
-              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Node.js</span>
-              <span class="bg-indigo-700 text-white px-3 py-1 rounded-full text-xs font-semibold">PostgreSQL</span>
-              <span class="bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold">Express</span>
-            </div>
-            <span class="text-xs text-gray-400 mb-2">11/2023 – Present</span>
-            <a href="https://github.com/adibamba/Secure-Authentication-with-Node.js-PostgreSQL" target="_blank" class="mt-auto bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-indigo-600 hover:to-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">View on GitHub</a>
-          </div>
-
+    <!-- Projects -->
+    <section id="projects" class="my-12">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-bold text-white">Selected Projects</h2>
+        <div class="flex gap-2">
+          <button data-filter="all" class="px-3 py-2 rounded-full text-sm bg-indigo-700/40 text-indigo-200 hover:bg-indigo-600/60">All</button>
+          <button data-filter="cloud" class="px-3 py-2 rounded-full text-sm bg-transparent text-gray-300 hover:bg-indigo-600/10">Cloud</button>
+          <button data-filter="security" class="px-3 py-2 rounded-full text-sm bg-transparent text-gray-300 hover:bg-indigo-600/10">Security</button>
+          <button data-filter="ml" class="px-3 py-2 rounded-full text-sm bg-transparent text-gray-300 hover:bg-indigo-600/10">ML/Data</button>
         </div>
       </div>
+
+      <div id="projects-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- cards injected by JavaScript from external projects.js -->
+      </div>
+
+      <div class="mt-6 text-sm text-gray-400">Tip: click "View on GitHub" to see code, or open project details for highlights.</div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="my-24 opacity-0 translate-y-8 transition-all duration-700 ease-out will-change-transform">
-      <div class="bg-black/70 rounded-2xl shadow-2xl p-8">
-        <h2 class="text-3xl font-bold text-blue-400 mb-4 flex items-center gap-2"><i class="fas fa-paper-plane animate-bounce"></i> Get in Touch</h2>
-        <div class="flex flex-col items-center gap-2">
-          <p class="flex items-center gap-2 text-lg"><i class="fas fa-envelope"></i> <a href="mailto:adi13218005155@outlook.com" class="text-blue-400 hover:underline">adi13218005155@outlook.com</a></p>
-          <p class="flex items-center gap-2 text-lg"><i class="fas fa-map-marker-alt"></i> Rome, Italy</p>
-          <p class="flex items-center gap-2 text-lg"><i class="fas fa-phone"></i> +39 339 115 4233</p>
-          <div class="flex gap-4 mt-2">
-            <a href="https://www.linkedin.com/in/abdoulie-a-j-339ba4226" target="_blank" aria-label="LinkedIn" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-12 h-12 flex items-center justify-center"><i class="fab fa-linkedin"></i></a>
-          </div>
-        </div>
+    <!-- Contact -->
+    <section id="contact" class="my-12 bg-black/40 rounded-2xl p-8 border border-indigo-800/20">
+      <h2 class="text-2xl font-bold text-white mb-3">Contact</h2>
+      <p class="text-gray-300">I'm open to new roles and consulting opportunities — feel free to reach out.</p>
+      <div class="mt-4 flex flex-col sm:flex-row gap-4">
+        <a href="mailto:adi13218005155@outlook.com" class="bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-3 rounded-full font-semibold">Email me</a>
+        <a href="https://www.linkedin.com/in/abdoulie-a-j-339ba4226" target="_blank" class="border border-indigo-600 text-indigo-200 px-5 py-3 rounded-full hover:bg-indigo-600/10">LinkedIn</a>
       </div>
+      <div class="mt-6 text-sm text-gray-400">Phone: +39 339 115 4233</div>
     </section>
+
   </main>
 
   <footer class="text-center py-8 text-gray-400 text-sm mt-12">
     &copy; 2024 Abdoulie A.J. All rights reserved.
   </footer>
 
-  <!-- TypewriterJS for dynamic typing effect -->
+  <!-- Modal markup -->
+  <div id="modal-backdrop" class="modal-backdrop">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="flex justify-between items-start">
+        <h3 id="modal-title" class="text-lg font-bold"></h3>
+        <button id="modal-close" class="text-gray-300 hover:text-white">&times;</button>
+      </div>
+      <div id="modal-body" class="mt-4 text-gray-200"></div>
+      <div id="modal-tags" class="mt-4"></div>
+      <div class="mt-6 flex gap-3">
+        <a id="modal-github" href="#" target="_blank" class="bg-gradient-to-r from-indigo-600 to-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">View on GitHub</a>
+        <button id="modal-copy" class="px-3 py-2 text-sm rounded-full border border-indigo-700 text-indigo-200 hover:bg-indigo-700/10">Copy link</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- load external projects data -->
+  <script src="projects.js"></script>
+
+  <!-- TypewriterJS -->
   <script src="https://unpkg.com/typewriter-effect@2.18.0/dist/core.js"></script>
+
   <script>
     // Hamburger menu toggle
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    menuBtn.addEventListener('click', () => {
+    menuBtn?.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
     });
-    // Typewriter effect
-    const typewriter = new Typewriter('#typewriter', {
-      loop: true,
-      delay: 60,
-      deleteSpeed: 30
-    });
+
+    // Typewriter effect (kept minimal)
+    const typewriter = new Typewriter('#typewriter', { loop: true, delay: 60, deleteSpeed: 30 });
     typewriter
       .typeString('Cloud Engineer | Microsoft365/Azure Specialist')
-      .pauseFor(1800)
+      .pauseFor(1600)
       .deleteAll()
       .typeString('Microsoft-Certified Cloud & Security Engineer')
-      .pauseFor(1800)
+      .pauseFor(1600)
       .deleteAll()
       .typeString('Mathematical Engineering Student')
-      .pauseFor(1800)
+      .pauseFor(1600)
       .deleteAll()
       .start();
-    // Fade-in on scroll
-    const fadeSections = document.querySelectorAll('section, header');
-    const fadeIn = (el) => {
-      el.classList.remove('opacity-0', 'translate-y-8');
-      el.classList.add('opacity-100', 'translate-y-0');
-    };
-    const observerFade = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          fadeIn(entry.target);
-          observerFade.unobserve(entry.target);
-        }
+
+    // Projects rendering depends on projects variable from projects.js
+    const grid = document.getElementById('projects-grid');
+
+    function renderTags(tags) {
+      return tags.map(t => `<span class="bg-indigo-700 text-white px-2 py-0.5 rounded-full text-xs mr-1">${t}</span>`).join('');
+    }
+
+    function renderProjects(list) {
+      if (!grid) return;
+      grid.innerHTML = list.map(p => `
+        <article class="rounded-xl p-6 bg-gradient-to-br from-indigo-900/10 to-transparent border border-indigo-800/10 hover:scale-[1.02] transition-transform duration-200 card-glow flex flex-col" data-id="${p.id}">
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-lg bg-indigo-800/40 flex items-center justify-center text-indigo-200">
+                <i class="fas ${p.icon}"></i>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-white">${p.title}</h3>
+                <div class="text-xs text-gray-400">${p.period}</div>
+              </div>
+            </div>
+            <div class="text-sm text-gray-300">${renderTags(p.tags)}</div>
+          </div>
+          <p class="text-gray-300 mb-4 flex-grow">${p.description}</p>
+          <div class="mt-3 flex items-center gap-3">
+            <a href="${p.link}" target="_blank" class="bg-gradient-to-r from-indigo-600 to-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">View on GitHub</a>
+            <button class="px-3 py-2 text-sm rounded-full border border-indigo-700 text-indigo-200 hover:bg-indigo-700/10" onclick="copyLink('${p.link}')">Copy link</button>
+            <button class="px-3 py-2 text-sm rounded-full border border-indigo-700 text-indigo-200 hover:bg-indigo-700/10" onclick="openModal('${p.id}')">Details</button>
+          </div>
+        </article>
+      `).join('');
+
+      document.querySelectorAll('#projects-grid article').forEach(card => {
+        card.addEventListener('keydown', e => { if (e.key === 'Enter') openModal(card.getAttribute('data-id')); });
       });
-    }, { threshold: 0.15 });
-    fadeSections.forEach(section => {
-      observerFade.observe(section);
+    }
+
+    // initial render once projects variable is available
+    if (window.projects) renderProjects(window.projects);
+    else console.warn('projects data not found; ensure projects.js is loaded');
+
+    // filtering
+    document.querySelectorAll('[data-filter]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const f = btn.getAttribute('data-filter');
+        document.querySelectorAll('[data-filter]').forEach(b => b.classList.remove('bg-indigo-700/40'));
+        btn.classList.add('bg-indigo-700/40');
+        if (f === 'all') renderProjects(window.projects);
+        else renderProjects(window.projects.filter(p => p.category === f));
+      });
     });
-    // Animate icons (e.g., floating effect)
-    document.querySelectorAll('.animated-svg, .fa-linkedin').forEach(icon => {
-      icon.classList.add('animated-svg');
-    });
+
+    function copyLink(url) {
+      navigator.clipboard?.writeText(url).then(()=> { alert('Repository link copied to clipboard'); }).catch(()=> { window.prompt('Copy this link', url); });
+    }
+
+    // Modal logic
+    const modalBackdrop = document.getElementById('modal-backdrop');
+    const modalTitle = document.getElementById('modal-title');
+    const modalBody = document.getElementById('modal-body');
+    const modalTags = document.getElementById('modal-tags');
+    const modalGithub = document.getElementById('modal-github');
+    const modalClose = document.getElementById('modal-close');
+    const modalCopy = document.getElementById('modal-copy');
+
+    function openModal(id) {
+      const p = window.projects.find(x => x.id === id);
+      if (!p) return;
+      modalTitle.textContent = p.title;
+      modalBody.innerHTML = `<p class="text-gray-300">${p.description}</p><div class="mt-3 text-sm text-gray-400">Period: ${p.period}</div><div class="mt-3 text-sm text-gray-300">Category: ${p.category}</div>`;
+      modalTags.innerHTML = renderTags(p.tags);
+      modalGithub.href = p.link;
+      modalCopy.onclick = () => copyLink(p.link);
+      modalBackdrop.style.display = 'flex';
+    }
+
+    function closeModal() { modalBackdrop.style.display = 'none'; }
+    modalClose.addEventListener('click', closeModal);
+    modalBackdrop.addEventListener('click', (e) => { if (e.target === modalBackdrop) closeModal(); });
+
+    // Fade-in animation
+    const fadeSections = document.querySelectorAll('section, header');
+    const fadeIn = (el) => { el.classList.remove('opacity-0', 'translate-y-8'); el.classList.add('opacity-100', 'translate-y-0'); };
+    const observerFade = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { fadeIn(entry.target); observerFade.unobserve(entry.target); } }); }, { threshold: 0.12 });
+    fadeSections.forEach(section => { section.classList.add('opacity-0', 'translate-y-8'); observerFade.observe(section); });
   </script>
 </body>
 </html>
