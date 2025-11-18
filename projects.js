@@ -1,5 +1,6 @@
 // Portfolio projects data
-window.projects = [
+window.Portfolio = window.Portfolio || {};
+window.Portfolio.projects = [
   // High-impact newer projects first
   {
     id: 'avionics-cybersecurity-simulation',

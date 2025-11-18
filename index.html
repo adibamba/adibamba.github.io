@@ -69,13 +69,12 @@
       transform: scale(1.05);
     }
     
-    /* Smooth transitions */
-    .project-card {
-      transition: all 0.3s ease;
-    }
-    
-    .project-card.hidden {
-      display: none;
+    /* Line clamp fallback for description */
+    .line-clamp-3 {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
     }
   </style>
 </head>
@@ -344,8 +343,8 @@
       grid.innerHTML = '';
       
       const filteredProjects = filter === 'all' 
-        ? window.projects 
-        : window.projects.filter(p => p.category === filter);
+        ? window.Portfolio.projects 
+        : window.Portfolio.projects.filter(p => p.category === filter);
       
       filteredProjects.forEach(project => {
         const card = document.createElement('div');
@@ -410,7 +409,7 @@
     const modalClose = document.getElementById('modal-close');
     
     function openModal(projectId) {
-      const project = window.projects.find(p => p.id === projectId);
+      const project = window.Portfolio.projects.find(p => p.id === projectId);
       if (!project) return;
       
       document.getElementById('modal-icon').className = `fas fa-${project.icon} text-white text-3xl`;
@@ -450,12 +449,45 @@
       }
     });
     
-    // Copy link functionality
+    // Copy link functionality with fallback
     document.getElementById('modal-copy-link').addEventListener('click', () => {
       const link = document.getElementById('modal-github-link').href;
-      navigator.clipboard.writeText(link).then(() => {
-        const btn = document.getElementById('modal-copy-link');
-        const originalHTML = btn.innerHTML;
+      const btn = document.getElementById('modal-copy-link');
+      const originalHTML = btn.innerHTML;
+      
+      // Try Clipboard API first
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(link).then(() => {
+          btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+          btn.classList.add('bg-green-600');
+          btn.classList.remove('bg-gray-700');
+          setTimeout(() => {
+            btn.innerHTML = originalHTML;
+            btn.classList.remove('bg-green-600');
+            btn.classList.add('bg-gray-700');
+          }, 2000);
+        }).catch(() => {
+          // Fallback for clipboard API failure
+          fallbackCopyToClipboard(link, btn, originalHTML);
+        });
+      } else {
+        // Fallback for browsers without clipboard API
+        fallbackCopyToClipboard(link, btn, originalHTML);
+      }
+    });
+    
+    // Fallback copy method
+    function fallbackCopyToClipboard(text, btn, originalHTML) {
+      const textArea = document.createElement('textarea');
+      textArea.value = text;
+      textArea.style.position = 'fixed';
+      textArea.style.left = '-999999px';
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      
+      try {
+        document.execCommand('copy');
         btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
         btn.classList.add('bg-green-600');
         btn.classList.remove('bg-gray-700');
@@ -464,8 +496,19 @@
           btn.classList.remove('bg-green-600');
           btn.classList.add('bg-gray-700');
         }, 2000);
-      });
-    });
+      } catch (err) {
+        btn.innerHTML = '<i class="fas fa-exclamation"></i> Copy failed';
+        btn.classList.add('bg-red-600');
+        btn.classList.remove('bg-gray-700');
+        setTimeout(() => {
+          btn.innerHTML = originalHTML;
+          btn.classList.remove('bg-red-600');
+          btn.classList.add('bg-gray-700');
+        }, 2000);
+      }
+      
+      document.body.removeChild(textArea);
+    }
     
     // Initialize projects on page load
     window.addEventListener('DOMContentLoaded', () => {
