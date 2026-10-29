@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://abdoulieajallow.engineer/sitemap.xml
